@@ -79,7 +79,7 @@ def plot_metrics(SCENARIO, WEATHER):
     plt.subplot(2, 4, 2)
     plt.scatter(train_df["gen"], train_df["collisions"], color='g', s=5, alpha=0.33)
     if baseline is not None:
-        plt.axhline(y=baseline["collisions"], color='r', linestyle='--', label="Baseline")
+        plt.axhline(y=baseline["collisions"]-1, color='r', linestyle='--', label="Baseline")
     plt.title("Collisions per Generation")
     plt.xlabel("Generation")
     plt.ylabel("Collisions")
