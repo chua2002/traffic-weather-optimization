@@ -46,7 +46,7 @@ Functions within file to run and generate graphs
 Altered built-in SUMO script. Displays traffic network with color-coded speed limits
 
 ```
-python plot_net_speeds_custom.py -n <network_path> --minV 0 --maxV 100 --scenario <scenario? --weather <weather_condition> --colormap "hot"
+python plot_net_speeds_custom.py -n <network_path> --minV 0 --maxV 100 --scenario <scenario> --weather <weather_condition> --colormap "hot"
 ```
 
 speed_net.sh is a helper script to make this easier.
