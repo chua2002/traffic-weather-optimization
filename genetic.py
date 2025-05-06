@@ -1,3 +1,4 @@
+import multiprocessing
 import os
 import sys
 import random
@@ -230,6 +231,10 @@ def run_baseline(speed = 25):
     log_metrics(f"{LOG_FOLDER}/baseline_data.csv", "baseline", "baseline", fit, jams, ebraking, collisions, totalTravelTime, waitingTime, tripCount)
 
 def train():
+    if not os.path.exists("results"):
+        os.mkdir("results")
+    if not os.path.exists("compiled_results"):
+        os.mkdir("compiled_results")
     try:
         os.mkdir(LOG_FOLDER)
     except OSError as error:
