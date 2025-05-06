@@ -1,0 +1,88 @@
+<city>
+    <general
+        inhabitants="3084"
+        households="1044"
+        childrenAgeLimit="18"
+        retirementAgeLimit="62"
+        carRate="0.66"
+        unemploymentRate="0.03"
+        footDistanceLimit="350"
+        incomingTraffic="200"
+        outgoingTraffic="400"
+    />
+	<parameters
+        carPreference="0.95"
+        meanTimePerKmInCity="360"
+        freeTimeActivityRate="0.15"
+        uniformRandomTraffic="0"
+        departureVariation="0"
+    />
+	<population>
+        <bracket beginAge="0" endAge="9" peopleNbr="11" />
+        <bracket beginAge="10" endAge="19" peopleNbr="11" />\
+		<bracket beginAge="20" endAge="29" peopleNbr="12" />
+		<bracket beginAge="30" endAge="39" peopleNbr="12" />
+		<bracket beginAge="40" endAge="49" peopleNbr="14" />
+		<bracket beginAge="50" endAge="59" peopleNbr="16" />
+		<bracket beginAge="60" endAge="69" peopleNbr="11" />
+		<bracket beginAge="70" endAge="79" peopleNbr="8" />
+		<bracket beginAge="80" endAge="100" peopleNbr="4" />
+    </population>
+	<streets>
+		<street edge="8853068#0" population="0" workPosition="100" />
+		<street edge="-8853068#1" population="0" workPosition="100" />
+		<street edge="-8854261" population="0" workPosition="100" />
+		<street edge="202957372" population="0" workPosition="100" />
+		<street edge="8860445#0" population="0" workPosition="100" />
+		<street edge="-8852100#0" population="0" workPosition="100" />
+		<street edge="-8849849#5" population="0" workPosition="100" />
+		<street edge="8852465" population="1" workPosition="0" />
+		<street edge="-8852597" population="1" workPosition="0" />
+		<street edge="8855074" population="1" workPosition="0" />
+		<street edge="-1103221333#2" population="1" workPosition="0" />
+		<street edge="8855071" population="1" workPosition="0" />
+		<street edge="8856879" population="1" workPosition="0" />
+		<street edge="8860281#0" population="1" workPosition="0" />
+		<street edge="-8851238" population="1" workPosition="0" />
+		<street edge="-8857889" population="1" workPosition="0" />
+		<street edge="8846831" population="1" workPosition="0" />
+		<street edge="-8858130" population="1" workPosition="0" />
+		<street edge="8854466#3" population="1" workPosition="0" />
+		<street edge="-8856594#1" population="1" workPosition="0" />
+		<street edge="-8857582#1" population="1" workPosition="0" />
+		<street edge="8855178#0" population="1" workPosition="0" />
+		<street edge="-8850101" population="1" workPosition="0" />
+		<street edge="8853936" population="1" workPosition="0" />
+		<street edge="8859647#1" population="1" workPosition="0" />
+		<street edge="-8849211" population="1" workPosition="0" />
+		<street edge="8860938" population="1" workPosition="0" />
+		<street edge="-8852297#1" population="1" workPosition="0" />
+		<street edge="8855220#0" population="1" workPosition="0" />
+		<street edge="-8849652#0" population="1" workPosition="0" />
+		<street edge="-8855069" population="1" workPosition="0" />
+		<street edge="-8856630" population="1" workPosition="0" />
+		<street edge="-8855621#0" population="1" workPosition="0" />
+		<street edge="-8861283" population="1" workPosition="0" />
+		<street edge="8849960" population="1" workPosition="0" />
+    </streets>
+	<workHours>
+        <opening hour="30600" proportion="0.30" />
+        <opening hour="32400" proportion="0.70" />
+        <closing hour="43200" proportion="0.20" />
+        <closing hour="63000" proportion="0.20" />
+        <closing hour="64800" proportion="0.60" />
+    </workHours>
+	<cityGates>
+        <entrance edge="-107771269#0" pos="150" incoming="1.0" outgoing="1.0"/>
+        <entrance edge="197464470#0" pos="1295" incoming="0" outgoing="1.0"/>
+		<entrance edge="27712673" pos="0" incoming="1.0" outgoing="0"/>
+        <entrance edge="8860443#0" pos="5" incoming=".1" outgoing=".1"/>
+        <entrance edge="-8860867" pos="79" incoming=".1" outgoing=".1"/>
+        <entrance edge="-202957359#0" pos="0" incoming=".2" outgoing=".2"/>
+        <entrance edge="-202957373#3" pos="134" incoming=".1" outgoing=".1"/>
+        <entrance edge="-8860852#1" pos="42" incoming=".2" outgoing=".2"/>
+    </cityGates>
+    <schools>
+        <school edge="-8850107" pos="23.0" beginAge="5" endAge="18" capacity="500" opening="32400" closing="64800" />
+    </schools>
+</city>
