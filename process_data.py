@@ -47,7 +47,9 @@ def plot_speeds(location):
         print(w_conditions[i], means[i])
         plt.axvline(x=means[i], linestyle="--", color=w_colors[i], alpha=1)
 
-    plt.show()
+    # plt.show()
+    plt.savefig(f"{location}_speed_dist_hist.png")
+
 
 def plot_metrics(SCENARIO, WEATHER):
     train_df = pd.read_csv(f"compiled_results/{SCENARIO}_{WEATHER}_metric.csv", header=None,
@@ -131,7 +133,9 @@ def plot_metrics(SCENARIO, WEATHER):
     plt.legend()
 
     plt.tight_layout()
-    plt.show()
+    # plt.show()
+    plt.savefig(f"{SCENARIO}_{WEATHER}_training_metrics.png")
+
 
 def plot_compare_metrics(scenario):
 
@@ -180,7 +184,8 @@ def plot_compare_metrics(scenario):
     plt.ylabel("Trip Count")
 
     plt.tight_layout()
-    plt.show()
+    # plt.show()
+    plt.savefig(f"{scenario}_compare_metrics.png")
 
 
 
@@ -196,7 +201,9 @@ def plot_compare_metrics(scenario):
 
 plot_speeds("dadeville_v2")
 plot_metrics("dadeville_v2", "osm_clear_dry")
+plot_metrics("dadeville_v2", "osm_heavy_rain")
+plot_metrics("dadeville_v2", "osm_light_snow")
+plot_metrics("dadeville_v2", "osm_heavy_snow")
 plot_metrics("dadeville_v2", "osm_light_rain")
 plot_metrics("dadeville_v2", "osm_fog")
-
 plot_compare_metrics("dadeville_v2")
