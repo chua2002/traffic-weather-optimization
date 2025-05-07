@@ -107,6 +107,8 @@ def main(args=None):
         sm._A = []
     plt.colorbar(sm, ax=ax)
     options.nolegend = True
+    options.output = f"{options.SCENARIO}_{options.WEATHER}.png"
+    options.blind = True
     helpers.closeFigure(fig, ax, options)
 
 
