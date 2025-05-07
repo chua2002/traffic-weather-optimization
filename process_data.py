@@ -7,7 +7,7 @@ LOG_FOLDER = "compiled_results"
 
 # sims=("gordo", "dadeville_v2")
 
-sims=[ "dadeville_v2"]
+sims=["dadeville_v2"]
 w_conditions=("osm_clear_dry","osm_light_snow", "osm_heavy_snow", "osm_light_rain", "osm_heavy_rain", "osm_fog")
 w_colors=("goldenrod", "magenta", "purple", "dodgerblue", "navy", "slategray")
 best_speeds = {}
@@ -48,7 +48,7 @@ def plot_speeds(location):
         plt.axvline(x=means[i], linestyle="--", color=w_colors[i], alpha=1)
 
     # plt.show()
-    plt.savefig(f"{location}_speed_dist_hist.png")
+    plt.savefig(f"compiled_results/{location}_speed_dist_hist.png")
 
 
 def plot_metrics(SCENARIO, WEATHER):
@@ -134,7 +134,7 @@ def plot_metrics(SCENARIO, WEATHER):
 
     plt.tight_layout()
     # plt.show()
-    plt.savefig(f"{SCENARIO}_{WEATHER}_training_metrics.png")
+    plt.savefig(f"compiled_results/{SCENARIO}_{WEATHER}_training_metrics.png")
 
 
 def plot_compare_metrics(scenario):
@@ -185,25 +185,14 @@ def plot_compare_metrics(scenario):
 
     plt.tight_layout()
     # plt.show()
-    plt.savefig(f"{scenario}_compare_metrics.png")
+    plt.savefig(f"compiled_results/{scenario}_compare_metrics.png")
 
 
 
-# plot_speeds("gordo")
-# plot_metrics("gordo", "osm_clear_dry")
-# plot_metrics("gordo", "osm_heavy_snow")
-#
-# plot_metrics("gordo", "osm_fog")
-#
-# plot_compare_metrics("gordo")
 
 
-
-plot_speeds("dadeville_v2")
-plot_metrics("dadeville_v2", "osm_clear_dry")
-plot_metrics("dadeville_v2", "osm_heavy_rain")
-plot_metrics("dadeville_v2", "osm_light_snow")
-plot_metrics("dadeville_v2", "osm_heavy_snow")
-plot_metrics("dadeville_v2", "osm_light_rain")
-plot_metrics("dadeville_v2", "osm_fog")
-plot_compare_metrics("dadeville_v2")
+for s in sims:
+    plot_speeds(s)
+    plot_compare_metrics(s)
+    for w in w_conditions:
+        plot_metrics(s, w)
