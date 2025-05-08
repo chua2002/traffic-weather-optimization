@@ -5,9 +5,9 @@ import numpy as np
 
 LOG_FOLDER = "compiled_results"
 
-# sims=("gordo", "dadeville_v2")
+# sims=("gordo", "dadeville_v2", )
 
-sims=["dadeville_v2"]
+sims=["cafb"]
 w_conditions=("osm_clear_dry","osm_light_snow", "osm_heavy_snow", "osm_light_rain", "osm_heavy_rain", "osm_fog")
 w_colors=("goldenrod", "magenta", "purple", "dodgerblue", "navy", "slategray")
 best_speeds = {}
@@ -19,8 +19,9 @@ for s in sims:
     best_speeds[s] = {}
     for w in w_conditions:
         stats = np.array(pd.read_csv(f'{LOG_FOLDER}/{s}_{w}_metric.csv', usecols=[2, 3, 4, 5, 6, 7, 8], header=None, dtype=float))
-        best_idx = int(np.argmax(stats[:, 0]))
-
+        best_idx = int(np.argmax(stats[-30:, 0])) + len(stats) - 29
+        
+        print(s,w,best_idx)
         best_metrics[s][w] = {"jams":stats[best_idx,1], "ebrakes":stats[best_idx,2], "collisions":stats[best_idx,3],
                               "totalTravelTime":stats[best_idx,4], "waitingTime":stats[best_idx,5],
                               "tripCount":stats[best_idx,6]}
@@ -186,10 +187,6 @@ def plot_compare_metrics(scenario):
     plt.tight_layout()
     # plt.show()
     plt.savefig(f"compiled_results/{scenario}_compare_metrics.png")
-
-
-
-
 
 for s in sims:
     plot_speeds(s)
