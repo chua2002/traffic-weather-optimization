@@ -68,7 +68,7 @@ def main(args=None):
     net = sumolib.net.readNet(options.net)
 
     # get best fitness idx
-    best_idx = int(np.argmax(np.array(pd.read_csv(f'compiled_results/{options.SCENARIO}_{options.WEATHER}_metric.csv', usecols=[2], header=None, dtype=float))[:,0]))
+    best_idx = int(np.argmax(np.array(pd.read_csv(f'compiled_results/{options.SCENARIO}_{options.WEATHER}_metric.csv', usecols=[2], header=None, dtype=float))[-30:,0]))+ 6000 - 29
     best_speeds = np.array(pd.read_csv(f'compiled_results/{options.SCENARIO}_{options.WEATHER}_gene.csv', skiprows=best_idx, nrows=1, header=None, dtype=float))[0]
 
     speeds = {}
